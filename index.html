@@ -14,7 +14,7 @@
             <div class="bg-emerald-500 p-2 rounded-full">
                 <i class="fas fa-heartbeat text-white text-xl"></i>
             </div>
-            <span class="text-2xl font-bold text-gray-700 tracking-tight">Hospital Management</span>
+            <span class="text-2xl font-bold text-gray-700 tracking-tight"><span style="color:green;">Care</span>Flow</span>
         </div>
 
         <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
@@ -50,7 +50,7 @@
                     <i class="fas fa-user-nurse"></i>
                 </div>
                 <div>
-                    <p class="text-[#2c3e50] font-bold text-lg leading-tight">Patient Login</p>
+                   <p id="patientLogin" class="text-[#2c3e50] font-bold text-lg leading-tight" >Patient Login</p>
                     <p class="text-gray-400 text-sm">View Records</p>
                 </div>
             </a>
@@ -60,7 +60,7 @@
                     <i class="fas fa-user-shield"></i>
                 </div>
                 <div>
-                    <p class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
+                    <p  class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
                     <p class="text-gray-400 text-sm">Access Dashboard</p>
                 </div>
             </a>
@@ -355,7 +355,12 @@
         const container = document.getElementById('loginDropdownContainer');
         const menu = document.getElementById('dropdownMenu');
         const arrow = document.getElementById('arrowIcon');
+        const patientLogin = document.getElementById('patientLogin');
 
+         // Patient Login Button Click  
+        patientLogin.addEventListener('click', () => {
+            window.location.href = './patientlogin.html';
+        });
         // Hover Start (Jab mouse upar aaye)
         container.addEventListener('mouseenter', () => {
             menu.classList.remove('hidden');
@@ -365,6 +370,7 @@
         // Hover End (Jab mouse hat jaye)
         container.addEventListener('mouseleave', () => {
             menu.classList.add('hidden');
+            
             arrow.style.transform = 'rotate(0deg)';
         });
 
