@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareFlow-about</title>
+    <title>Hospital Management - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -28,9 +28,9 @@
                 <span>Specialities</span>
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
             </div>
-            <a href="#" class="hover:text-emerald-500">Doctors</a>
-            <a href="#" class="hover:text-emerald-500">Contact</a>
-            <a href="#" class="hover:text-emerald-500">FAQs</a>
+            <a href="./doctor.html" class="hover:text-emerald-500">Doctors</a>
+            <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
+            <a href="./faqs.html" class="hover:text-emerald-500">FAQs</a>
         </div>
 
         <div class="flex items-center space-x-4">
@@ -45,95 +45,57 @@
             </div>
         </div>
     </nav>
-    <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        
-        <div class="mb-24">
-            <h1 class="text-5xl font-extrabold text-[#0a1d37] mb-4">About Us</h1>
-            <p class="text-xl text-gray-600 mb-4">Delivering Quality Healthcare with Compassion</p>
-            <h2 class="text-3xl font-bold text-emerald-500">Your Health, Our Mission</h2>
-        </div>
 
-        <div class="max-w-5xl mx-auto">
-            <h3 class="text-3xl font-bold text-emerald-500 mb-6">Welcome to Our Hospital</h3>
-            <p class="text-gray-700 text-lg mb-8 font-medium">
-                We are dedicated to providing the best healthcare services to our patients.
-            </p>
-            
-            <p class="text-gray-500 leading-relaxed text-base max-w-4xl mx-auto">
-                The CareFlow Medical College & Hospital, is a Private College established in the year 2000. 
-                The college is affiliated to Vinoba Bhave University, Hazaribag, located in Jharkhand with an annual intake of 100 seats.
-            </p>
-        </div>
-
-    </div>
-</section>
+    
 <section class="py-16 bg-white">
-  <div class="container mx-auto px-6">
+  <div class="max-w-7xl mx-auto px-6 text-center">
     
     <div class="mb-12">
-      <p class="text-gray-600 leading-relaxed text-base">
-        <strong class="text-gray-800">Library:</strong> The College library has a rich collection of Homoeopathy books and allied medical subjects. The library has well-stocked journals, magazines, newspapers and periodicals. Facilities that are provided by the college are lecture theatres, seminar hall, sports, conference hall, canteen, well-established classrooms and medical.
+      <h2 class="text-4xl font-bold text-emerald-500 mb-4">Contact Us</h2>
+      <p class="text-gray-600 text-lg">
+        We are here to assist you. Reach out to us through any of the following methods.
       </p>
     </div>
 
-    <div class="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-2xl group">
-      <img 
-        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-        alt="CareFlow Hospital" 
-        class="w-full h-full object-cover"
-      />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10 max-w-5xl mx-auto">
       
-      <div class="absolute inset-0 bg-black/50 transition-opacity group-hover:bg-black/40"></div>
-
-      <div class="absolute top-12 left-0 right-0 text-center px-4">
-         <h2 class="text-white text-4xl md:text-6xl font-bold tracking-wider uppercase opacity-80">
-            CareFlow Hospital & Research Institute
-         </h2>
-      </div>
-
-      <div class="absolute bottom-12 left-12 max-w-2xl text-white">
-        <h3 class="text-3xl font-bold mb-4">Our Mission</h3>
-        <p class="text-xl font-medium opacity-90">
-          To deliver quality healthcare services with compassion and excellence.
+      <div class="bg-emerald-50/50 rounded-3xl p-10 flex flex-col items-center justify-center border border-emerald-50">
+        <div class="mb-4">
+          <i class="fas fa-location-dot text-emerald-500 text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-emerald-600 mb-4">Address</h3>
+        <p class="text-gray-700 mb-8 font-medium">
+          Namkum Ranchi Sindroll, Ranchi Road
         </p>
+        <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2.5 rounded-full font-bold flex items-center space-x-2 transition-all shadow-md active:scale-95">
+          <i class="fas fa-location-arrow text-sm"></i>
+          <span>View on Map</span>
+        </button>
       </div>
+
+      <div class="bg-emerald-50/50 rounded-3xl p-10 flex flex-col items-center justify-center border border-emerald-50">
+        <div class="mb-4">
+          <i class="fas fa-phone-alt text-emerald-500 text-4xl transform -rotate-12"></i>
+        </div>
+        <h3 class="text-2xl font-bold text-emerald-600 mb-4">Contact Details</h3>
+        <div class="space-y-2 text-gray-700 font-medium">
+          <p>Email: <span class="text-emerald-500">careflow7070@gmail.com</span></p>
+          <p>Phone: <span class="text-emerald-500">+91 9142426139</span></p>
+          <p>Mobile: <span class="text-emerald-500">+91 9142426139</span></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex justify-center">
+      <a href="tel:+919142426139" class="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold text-xl flex items-center space-x-3 transition-all shadow-lg active:scale-95">
+        <i class="fas fa-phone"></i>
+        <span>Call Us: +91 9142426139</span>
+      </a>
     </div>
 
   </div>
 </section>
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-      <div>
-        <h3 class="text-2xl font-bold text-emerald-500 mb-4">Our Mission</h3>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          To deliver quality healthcare services with compassion and excellence.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-2xl font-bold text-emerald-500 mb-4">Our Vision</h3>
-        <p class="text-gray-700 leading-relaxed text-lg">
-          To be a leading healthcare provider recognized for innovation and patient care.
-        </p>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <h2 class="text-4xl font-extrabold text-[#0a1d37] mb-4">Patient Visits & Feedback</h2>
-      <div class="w-16 h-1 bg-emerald-500 mx-auto mb-8"></div>
-      <p class="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-        See how many patients have visited and left feedback. Data shows last 2 months with automatic cleanup.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-
-
 
 
 
@@ -193,7 +155,7 @@
                     </li>
                     <li class="flex items-center space-x-3">
                         <i class="fas fa-envelope text-emerald-500"></i>
-                        <span>careFlow7070@gmail.com</span>
+                        <span>rajkmr7070@gmail.com</span>
                     </li>
                     <li class="flex items-center space-x-3">
                         <i class="fas fa-clock text-emerald-500"></i>
@@ -205,7 +167,7 @@
 
         <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
             <p>© 2025 Hospital Management System. All rights reserved.</p>
-            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Tech Tycoons</a>.</p>
+            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Raj Kumar</a>.</p>
             <div class="flex space-x-4">
                 <a href="#" class="hover:text-white">Privacy Policy</a>
                 <a href="#" class="hover:text-white">Terms of Service</a>
@@ -216,3 +178,22 @@
 </footer>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
