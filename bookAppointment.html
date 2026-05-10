@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Appointment</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+
+  <div class="bg-white w-full max-w-2xl rounded-2xl shadow-lg p-6">
+
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold text-center text-emerald-600 mb-6">
+      Book an Appointment
+    </h1>
+
+    <!-- Form -->
+    <form class="space-y-4">
+
+      <!-- Full Name -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Full Name
+        </label>
+
+        <input
+          type="text"
+          placeholder="Enter your full name"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+      </div>
+
+      <!-- Age -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Age
+        </label>
+
+        <input
+          type="number"
+          placeholder="Enter your age"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+      </div>
+
+      <!-- Gender -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Gender
+        </label>
+
+        <select
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+          <option>Select your gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+
+        </select>
+      </div>
+
+      <!-- Hospital Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Select Hospital
+        </label>
+
+        <select
+          id="hospitalSelect"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+          <option value="">Choose Hospital</option>
+
+          <option value="apollo">Apollo Hospital</option>
+
+          <option value="medanta">Medanta Hospital</option>
+
+          <option value="aiims">AIIMS Hospital</option>
+
+        </select>
+      </div>
+
+      <!-- Speciality -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Speciality
+        </label>
+
+        <select
+          id="specialitySelect"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+          <option value="">Select Speciality</option>
+
+        </select>
+      </div>
+
+      <!-- Doctor Selection -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Select Doctor
+        </label>
+
+        <select
+          id="doctorSelect"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+
+          <option value="">Select Doctor</option>
+
+        </select>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Address
+        </label>
+
+        <textarea
+          rows="2"
+          placeholder="Enter your address"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5">
+          Contact Number
+        </label>
+
+        <input
+          type="text"
+          placeholder="Enter your contact number"
+          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        />
+      </div>
+
+      <!-- Buttons -->
+      <div class="space-y-2 pt-2">
+
+        <button
+          type="submit"
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg text-sm font-semibold transition">
+
+          Submit
+        </button>
+
+        <button
+          type="button"
+          class="w-full bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg text-sm font-semibold transition">
+
+          Back to Home
+        </button>
+
+      </div>
+
+    </form>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+
+    // Hospital Data
+    const hospitalData = {
+
+      apollo: {
+
+        specialities: {
+
+          Cardiology: [
+            "Dr. Raj Sharma",
+            "Dr. Amit Verma"
+          ],
+
+          Neurology: [
+            "Dr. Priya Singh",
+            "Dr. Karan Mehta"
+          ],
+
+          Orthopedic: [
+            "Dr. Deepak Kumar"
+          ]
+        }
+      },
+
+      medanta: {
+
+        specialities: {
+
+          Dental: [
+            "Dr. Riya Gupta"
+          ],
+
+          ENT: [
+            "Dr. Mohit Roy"
+          ],
+
+          Dermatology: [
+            "Dr. Sneha Das"
+          ]
+        }
+      },
+
+      aiims: {
+
+        specialities: {
+
+          Pediatrics: [
+            "Dr. Rahul Sinha"
+          ],
+
+          Oncology: [
+            "Dr. Neha Kapoor"
+          ],
+
+          Gynecology: [
+            "Dr. Pooja Singh"
+          ]
+        }
+      }
+    };
+
+    // Elements
+    const hospitalSelect = document.getElementById("hospitalSelect");
+    const specialitySelect = document.getElementById("specialitySelect");
+    const doctorSelect = document.getElementById("doctorSelect");
+
+    // Hospital Change
+    hospitalSelect.addEventListener("change", function () {
+
+      const selectedHospital = this.value;
+
+      // Reset speciality
+      specialitySelect.innerHTML =
+        `<option value="">Select Speciality</option>`;
+
+      // Reset doctor
+      doctorSelect.innerHTML =
+        `<option value="">Select Doctor</option>`;
+
+      if (selectedHospital) {
+
+        const specialities =
+          hospitalData[selectedHospital].specialities;
+
+        // Add Specialities
+        Object.keys(specialities).forEach(function (speciality) {
+
+          specialitySelect.innerHTML += `
+            <option value="${speciality}">
+              ${speciality}
+            </option>
+          `;
+        });
+      }
+    });
+
+    // Speciality Change
+    specialitySelect.addEventListener("change", function () {
+
+      const selectedHospital = hospitalSelect.value;
+
+      const selectedSpeciality = this.value;
+
+      // Reset Doctors
+      doctorSelect.innerHTML =
+        `<option value="">Select Doctor</option>`;
+
+      if (selectedHospital && selectedSpeciality) {
+
+        const doctors =
+          hospitalData[selectedHospital]
+          .specialities[selectedSpeciality];
+
+        // Add Doctors
+        doctors.forEach(function (doctor) {
+
+          doctorSelect.innerHTML += `
+            <option value="${doctor}">
+              ${doctor}
+            </option>
+          `;
+        });
+      }
+    });
+
+  </script>
+
+</body>
+</html>

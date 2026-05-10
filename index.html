@@ -28,8 +28,8 @@
                 <span>Specialities</span>
                 <i class="fas fa-chevron-down ml-1 text-xs"></i>
             </div>
-            <a href="#" class="hover:text-emerald-500">Doctors</a>
-            <a href="#" class="hover:text-emerald-500">Contact</a>
+            <a href="./doctors.html" class="hover:text-emerald-500">Doctors</a>
+            <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
             <a href="#" class="hover:text-emerald-500">FAQs</a>
         </div>
 
@@ -92,7 +92,7 @@
 
             <div class="flex space-x-6">
                 <div class="relative">
-                    <button class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
+                    <button id="book-btn" class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
                         Book Now 
                         <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </button>
@@ -100,7 +100,7 @@
                 </div>
 
                 <div class="relative">
-                    <button class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
+                    <button id="patientregister" class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
                         Register Now 
                         <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                     </button>
@@ -330,7 +330,7 @@
                     </li>
                     <li class="flex items-center space-x-3">
                         <i class="fas fa-envelope text-emerald-500"></i>
-                        <span>rajkmr7070@gmail.com</span>
+                        <span>CareFlow7070@gmail.com</span>
                     </li>
                     <li class="flex items-center space-x-3">
                         <i class="fas fa-clock text-emerald-500"></i>
@@ -342,7 +342,7 @@
 
         <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
             <p>© 2025 Hospital Management System. All rights reserved.</p>
-            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Raj Kumar</a>.</p>
+            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Tech Tycoons</a>.</p>
             <div class="flex space-x-4">
                 <a href="#" class="hover:text-white">Privacy Policy</a>
                 <a href="#" class="hover:text-white">Terms of Service</a>
@@ -356,11 +356,23 @@
         const menu = document.getElementById('dropdownMenu');
         const arrow = document.getElementById('arrowIcon');
         const patientLogin = document.getElementById('patientLogin');
+        const bookBtn = document.getElementById('book-btn');
+        const patientregister = document.getElementById('patientregister');
 
          // Patient Login Button Click  
         patientLogin.addEventListener('click', () => {
             window.location.href = './patient/patientlogin.html';
         });
+        bookBtn.addEventListener('click', () => {
+            window.location.href = './bookAppointment.html';
+        });
+        
+        patientregister.addEventListener('click', () => {
+            window.location.href = './patient/patientRegistration.html';
+        });
+
+
+
         // Hover Start (Jab mouse upar aaye)
         container.addEventListener('mouseenter', () => {
             menu.classList.remove('hidden');
