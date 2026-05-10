@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Patients - Maa Kalawati Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-slate-50 min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-100 px-6 py-3 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-blue-600 font-bold text-xl">
+                <i data-lucide="hospital" class="w-6 h-6"></i>
+                <span>Maa Kalawati Admin</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-6 text-slate-500 font-semibold text-sm">
+                <a href="#" class="hover:text-blue-600 transition">Dashboard</a>
+                <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1">Patients</a>
+                <a href="#" class="hover:text-blue-600 transition">Visits</a>
+                <a href="#" class="hover:text-blue-600 transition">Feedback</a>
+                <a href="#" class="hover:text-blue-600 transition">Messages</a>
+                <a href="#" class="hover:text-blue-600 transition uppercase">Reg_Person</a>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-100 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </button>
+            <div class="flex items-center gap-2 border-l pl-4 border-gray-200">
+                <div class="w-9 h-9 bg-cyan-500 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-gray-700 text-sm">Admin</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+        
+        <div class="bg-blue-600 rounded-3xl p-10 flex justify-between items-center shadow-lg relative overflow-hidden">
+            <div class="z-10">
+                <h1 class="text-white text-4xl font-bold mb-2">Manage Patients</h1>
+                <p class="text-blue-100 text-lg opacity-90 font-medium">View and manage all patient records. You can add, edit, or delete patient information.</p>
+            </div>
+            <div class="z-10 bg-white/20 p-6 rounded-full border border-white/30 backdrop-blur-md">
+                <i data-lucide="user" class="w-12 h-12 text-white"></i>
+            </div>
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-blue-400 rounded-full opacity-20"></div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-blue-600 text-2xl font-bold">Patients List</h2>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition shadow-md shadow-blue-100">
+                    <i data-lucide="plus" class="w-4 h-4"></i> Add Patient
+                </button>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl">
+                <table class="w-full text-left">
+                    <thead class="bg-blue-600 text-white text-sm">
+                        <tr>
+                            <th class="px-4 py-3 font-bold first:rounded-tl-lg">ID</th>
+                            <th class="px-4 py-3 font-bold">Name</th>
+                            <th class="px-4 py-3 font-bold">Age</th>
+                            <th class="px-4 py-3 font-bold">Gender</th>
+                            <th class="px-4 py-3 font-bold">Contact</th>
+                            <th class="px-4 py-3 font-bold">Address</th>
+                            <th class="px-4 py-3 font-bold">Medical History</th>
+                            <th class="px-4 py-3 font-bold last:rounded-tr-lg">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm">
+                        <tr class="hover:bg-slate-50 transition">
+                            <td class="px-4 py-4 text-gray-700">3</td>
+                            <td class="px-4 py-4 font-medium text-gray-800">raj kumar</td>
+                            <td class="px-4 py-4 text-gray-700">55</td>
+                            <td class="px-4 py-4 text-gray-700">Male</td>
+                            <td class="px-4 py-4 text-gray-700">646453453</td>
+                            <td class="px-4 py-4 text-gray-700">godaa</td>
+                            <td class="px-4 py-4 text-gray-700">N/A</td>
+                            <td class="px-4 py-4 flex gap-2">
+                                <button class
