@@ -22,6 +22,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    // Debug: log request method + payload keys
+    $logDir = __DIR__ . '/../php_logs';
+    if (!is_dir($logDir)) {
+        @mkdir($logDir, 0777, true);
+    }
+    $logFile = $logDir . '/create_booking_debug.log';
+    $payloadKeys = array_keys($_POST ?? []);
+    file_put_contents(
+        $logFile,
+        sprintf(
+            "%s method=%s keys=%s\n",
+            date('c'),
+            $_SERVER['REQUEST_METHOD'] ?? 'UNKNOWN',
+            json_encode($payloadKeys)
+        ),
+        FILE_APPEND
+    );
+
     // Generate a random future date and time for the appointment
     $future_date = date('Y-m-d', strtotime('+'.rand(1,30).' days'));
     $random_hour = rand(9, 16); // 9 AM to 4 PM
@@ -34,12 +52,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_prepare($conn, $sql);
     if ($stmt) {
         $status = 'Pending';
-        mysqli_stmt_bind_param($stmt, "sisssssssss", $full_name, $age, $gender, $hospital, $speciality, $doctor, $address, $contact_number, $future_date, $booking_time, $status);
+        mysqli_stmt_bind_param(
+            $stmt,
+            "sisssssssss",
+            $full_name,
+            $age,
+            $gender,
+            $hospital,
+            $speciality,
+            $doctor,
+            $address,
+            $contact_number,
+            $future_date,
+            $booking_time,
+            $status
+        );
 
         if (mysqli_stmt_execute($stmt)) {
             // Get the inserted booking ID
             $booking_id = mysqli_insert_id($conn);
-            
+
             // Return success response with booking data
             http_response_code(200);
             echo json_encode([
@@ -60,19 +92,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ]
             ]);
             exit();
-        } else {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'message' => 'Error booking appointment: ' . mysqli_error($conn)]);
-            exit();
         }
-        mysqli_stmt_close($stmt);
-    } else {
+
         http_response_code(400);
-        echo json_encode(['success' => false, 'message' => 'Database error: ' . mysqli_error($conn)]);
+        echo json_encode(['success' => false, 'message' => 'Error booking appointment: ' . mysqli_error($conn)]);
         exit();
     }
-} else {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Invalid request method']);
+
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'Database error: ' . mysqli_error($conn)]);
     exit();
 }
+
+http_response_code(405);
+echo json_encode(['success' => false, 'message' => 'Invalid request method']);
+exit();
+
