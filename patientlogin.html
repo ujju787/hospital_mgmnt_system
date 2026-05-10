@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareFlow - Patient Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#10b981] min-h-screen flex flex-col font-sans">
+
+    <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-md">
+        <div class="flex items-center space-x-2">
+            <div class="bg-[#10b981] p-1.5 rounded-full">
+                <i class="fas fa-heartbeat text-white text-lg"></i>
+            </div>
+            <span class="text-xl font-bold text-gray-800 tracking-tight">CareFlow</span>
+        </div>
+
+        <div class="flex items-center space-x-8 text-gray-700 font-medium">
+            <a href="#" class="hover:text-emerald-600 transition">Home</a>
+            <a href="#" class="hover:text-emerald-600 transition">About Us</a>
+            <a href="#" class="hover:text-emerald-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-lg p-10 md:p-14">
+            
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl text-[#10b981] mb-3" style="font-family: 'Pacifico', cursive;">
+                    Patient Login
+                </h1>
+                <p class="text-gray-500 font-medium">
+                    Login to access your account and book appointments.
+                </p>
+            </div>
+
+            <form class="space-y-6">
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2 ml-1" for="mobile">
+                        Mobile Number
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="mobile"
+                        class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                        placeholder=""
+                    >
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2 ml-1" for="password">
+                        Password
+                    </label>
+                    <div class="relative">
+                        <input 
+                            type="password" 
+                            id="password"
+                            class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition"
+                            placeholder=""
+                        >
+                        <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+                            <i class="far fa-eye text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-[#10b981] hover:bg-emerald-600 text-white font-bold py-3.5 rounded-xl text-lg shadow-lg shadow-emerald-200 transition-all duration-300 transform active:scale-[0.98]">
+                    Login
+                </button>
+
+                <div class="flex space-x-4 pt-2">
+                    <button type="button" class="flex-1 bg-[#e5e7eb] hover:bg-gray-300 text-gray-700 font-bold py-3 rounded-xl flex items-center justify-center space-x-2 transition">
+                        <i class="fas fa-arrow-left text-sm"></i>
+                        <span>Home</span>
+                    </button>
+                    <button type="button" class="flex-1 bg-[#e5e7eb] hover:bg-gray-300 text-gray-700 font-bold py-3 rounded-xl flex items-center justify-center space-x-2 transition">
+                        <i class="fas fa-user-plus text-sm"></i>
+                        <span>Register</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </main>
+
+</body>
+</html>
