@@ -1,394 +1,579 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CareFlow - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-</head>
-<body class="font-sans text-gray-800">
-
-    <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
-        <div class="flex items-center space-x-2">
-            <div class="bg-emerald-500 p-2 rounded-full">
-                <i class="fas fa-heartbeat text-white text-xl"></i>
-            </div>
-            <span class="text-2xl font-bold text-gray-700 tracking-tight"><span style="color:green;">Care</span>Flow</span>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-sans text-gray-800">
+    <nav
+      class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50"
+    >
+      <div class="flex items-center space-x-2">
+        <div class="bg-emerald-500 p-2 rounded-full">
+          <i class="fas fa-heartbeat text-white text-xl"></i>
         </div>
+        <span class="text-2xl font-bold text-gray-700 tracking-tight"
+          ><span style="color: green">Care</span>Flow</span
+        >
+      </div>
 
-        <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
-            <a href="#" class="hover:text-emerald-500">Home</a>
-            <a href="./aboutus.html" class="hover:text-emerald-500">About Us</a>
-            <div class="flex items-center cursor-pointer hover:text-emerald-500">
-                <span>Services</span>
-                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </div>
-            <div class="flex items-center cursor-pointer hover:text-emerald-500">
-                <span>Specialities</span>
-                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </div>
-            <a href="./doctors.html" class="hover:text-emerald-500">Doctors</a>
-            <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
-            <a href="#" class="hover:text-emerald-500">FAQs</a>
+      <div
+        class="hidden md:flex items-center space-x-6 text-gray-600 font-medium"
+      >
+        <a href="#" class="hover:text-emerald-500">Home</a>
+        <a href="./aboutus.html" class="hover:text-emerald-500">About Us</a>
+        <div class="flex items-center cursor-pointer hover:text-emerald-500">
+          <span>Services</span>
+          <i class="fas fa-chevron-down ml-1 text-xs"></i>
         </div>
+        <div class="flex items-center cursor-pointer hover:text-emerald-500">
+          <span>Specialities</span>
+          <i class="fas fa-chevron-down ml-1 text-xs"></i>
+        </div>
+        <a href="./doctors.html" class="hover:text-emerald-500">Doctors</a>
+        <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
+        <a href="#" class="hover:text-emerald-500">FAQs</a>
+      </div>
 
-        <div class="flex items-center space-x-4">
-         
-          <div class="relative inline-block text-left" id="loginDropdownContainer">
-        
-        <button id="loginBtn" class="bg-[#2ecc71] text-white px-6 py-2 rounded-md font-medium flex items-center gap-2 hover:bg-[#27ae60] transition-colors duration-300">
+      <div class="flex items-center space-x-4">
+        <div
+          class="relative inline-block text-left"
+          id="loginDropdownContainer"
+        >
+          <button
+            id="loginBtn"
+            class="bg-[#2ecc71] text-white px-6 py-2 rounded-md font-medium flex items-center gap-2 hover:bg-[#27ae60] transition-colors duration-300"
+          >
             <i class="far fa-user"></i>
             Login
-            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="arrowIcon"></i>
-        </button>
+            <i
+              class="fas fa-chevron-down text-xs transition-transform duration-300"
+              id="arrowIcon"
+            ></i>
+          </button>
 
-        <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
-            
-            <a href="#" class="group flex items-center p-4 hover:bg-gray-50 border-b border-gray-100 transition-all">
-                <div class="text-[#2ecc71] text-xl mr-4">
-                    <i class="fas fa-user-nurse"></i>
-                </div>
-                <div>
-                   <p id="patientLogin" class="text-[#2c3e50] font-bold text-lg leading-tight" >Patient Login</p>
-                    <p class="text-gray-400 text-sm">View Records</p>
-                </div>
+          <div
+            id="dropdownMenu"
+            class="hidden absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50"
+          >
+            <a
+              href="#"
+              class="group flex items-center p-4 hover:bg-gray-50 border-b border-gray-100 transition-all"
+            >
+              <div class="text-[#2ecc71] text-xl mr-4">
+                <i class="fas fa-user-nurse"></i>
+              </div>
+              <div>
+                <p
+                  id="patientLogin"
+                  class="text-[#2c3e50] font-bold text-lg leading-tight"
+                >
+                  Patient Login
+                </p>
+                <p class="text-gray-400 text-sm">View Records</p>
+              </div>
             </a>
 
-            <a href="#" class="group flex items-center p-4 hover:bg-gray-50 transition-all">
-                <div class="text-[#2ecc71] text-xl mr-4">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <div>
-                    <p  class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
-                    <p class="text-gray-400 text-sm">Access Dashboard</p>
-                </div>
+            <a
+              href="./admin/adminLogin.html"
+              class="group flex items-center p-4 hover:bg-gray-50 transition-all"
+            >
+              <div class="text-[#2ecc71] text-xl mr-4">
+                <i class="fas fa-user-shield"></i>
+              </div>
+              <div>
+                <p class="text-[#2c3e50] font-bold text-lg leading-tight">
+                  Admin Login
+                </p>
+                <p class="text-gray-400 text-sm">Access Dashboard</p>
+              </div>
             </a>
+          </div>
         </div>
-    </div>
-           
-            <div class="relative">
-                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48">
-                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            </div>
+
+        <div class="relative">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48"
+          />
+          <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
         </div>
+      </div>
     </nav>
 
     <main class="relative h-[85vh] w-full overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-                 alt="Hospital Background" 
-                 class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"></div>
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
+          alt="Hospital Background"
+          class="w-full h-full object-cover"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"
+        ></div>
+      </div>
+
+      <div
+        class="relative z-10 h-full flex flex-col justify-center px-12 md:px-24"
+      >
+        <h1 class="text-6xl font-extrabold text-gray-900 mb-2">
+          Book an Appointment
+        </h1>
+        <p class="text-2xl text-gray-600 mb-8">Special title treatment</p>
+
+        <h2 class="text-4xl font-bold text-emerald-500 mb-10 leading-tight">
+          Healthcare for Good Today.<br />Tomorrow. Always
+        </h2>
+
+        <div class="flex space-x-6">
+          <div class="relative">
+            <button
+              id="book-btn"
+              class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group"
+            >
+              Book Now
+              <i
+                class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </button>
+            <span
+              class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md"
+              >new</span
+            >
+          </div>
+
+          <div class="relative">
+            <button
+              id="patientregister"
+              class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group"
+            >
+              Register Now
+              <i
+                class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
+              ></i>
+            </button>
+            <span
+              class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md"
+              >new</span
+            >
+          </div>
         </div>
-
-        <div class="relative z-10 h-full flex flex-col justify-center px-12 md:px-24">
-            <h1 class="text-6xl font-extrabold text-gray-900 mb-2">Book an Appointment</h1>
-            <p class="text-2xl text-gray-600 mb-8">Special title treatment</p>
-            
-            <h2 class="text-4xl font-bold text-emerald-500 mb-10 leading-tight">
-                Healthcare for Good Today.<br>Tomorrow. Always
-            </h2>
-
-            <div class="flex space-x-6">
-                <div class="relative">
-                    <button id="book-btn" class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
-                        Book Now 
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                    <span class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md">new</span>
-                </div>
-
-                <div class="relative">
-                    <button id="patientregister" class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
-                        Register Now 
-                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                    </button>
-                    <span class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md">new</span>
-                </div>
-            </div>
-        </div>
+      </div>
     </main>
     <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        
+      <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <div class="w-16 h-1 bg-emerald-500 mx-auto mb-6"></div>
-            <p class="max-w-2xl mx-auto text-gray-500 leading-relaxed">
-                We provide comprehensive healthcare services to meet all your medical needs with state-of-the-art facilities and experienced professionals.
-            </p>
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <div class="w-16 h-1 bg-emerald-500 mx-auto mb-6"></div>
+          <p class="max-w-2xl mx-auto text-gray-500 leading-relaxed">
+            We provide comprehensive healthcare services to meet all your
+            medical needs with state-of-the-art facilities and experienced
+            professionals.
+          </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8">
-                    <i class="fas fa-heart-pulse text-emerald-500 text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Emergency Care</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    24/7 emergency medical services with rapid response teams and advanced life support capabilities for critical situations.
-                </p>
+          <div
+            class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8"
+            >
+              <i class="fas fa-heart-pulse text-emerald-500 text-2xl"></i>
             </div>
-
-            <div class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8">
-                    <i class="fas fa-microscope text-emerald-500 text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Laboratory Services</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Comprehensive diagnostic testing with state-of-the-art equipment and experienced technicians for accurate results.
-                </p>
-            </div>
-
-            <div class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300">
-                <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8">
-                    <i class="fas fa-head-side-mask text-emerald-500 text-2xl"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">ENT</h3>
-                <p class="text-gray-600 leading-relaxed">
-                    Advanced surgical procedures performed by expert surgeons using minimally invasive techniques for faster recovery.
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-<section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-        
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold text-[#0a1d37] mb-4">Meet Our Doctors</h2>
-            <div class="w-20 h-1.5 bg-emerald-500 mx-auto mb-8 rounded-full"></div>
-            <p class="max-w-2xl mx-auto text-gray-500 leading-relaxed font-medium">
-                Our team of experienced medical professionals is dedicated to providing the highest quality healthcare services.
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Emergency Care
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              24/7 emergency medical services with rapid response teams and
+              advanced life support capabilities for critical situations.
             </p>
+          </div>
+
+          <div
+            class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8"
+            >
+              <i class="fas fa-microscope text-emerald-500 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              Laboratory Services
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              Comprehensive diagnostic testing with state-of-the-art equipment
+              and experienced technicians for accurate results.
+            </p>
+          </div>
+
+          <div
+            class="p-10 rounded-2xl bg-white border border-gray-50 shadow-sm hover:shadow-xl transition-shadow duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-8"
+            >
+              <i class="fas fa-head-side-mask text-emerald-500 text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">ENT</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Advanced surgical procedures performed by expert surgeons using
+              minimally invasive techniques for faster recovery.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0a1d37] mb-4">
+            Meet Our Doctors
+          </h2>
+          <div
+            class="w-20 h-1.5 bg-emerald-500 mx-auto mb-8 rounded-full"
+          ></div>
+          <p
+            class="max-w-2xl mx-auto text-gray-500 leading-relaxed font-medium"
+          >
+            Our team of experienced medical professionals is dedicated to
+            providing the highest quality healthcare services.
+          </p>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                <div class="h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=800" 
-                         alt="Dr. James Wilson" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[#0a1d37]">Dr. James Wilson</h3>
-                    <p class="text-emerald-500 font-semibold mt-1">Cardiologist</p>
-                </div>
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=800"
+                alt="Dr. James Wilson"
+                class="w-full h-full object-cover"
+              />
             </div>
-
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                <div class="h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800" 
-                         alt="Dr. Emily Chen" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[#0a1d37]">Dr. Emily Chen</h3>
-                    <p class="text-emerald-500 font-semibold mt-1">Neurologist</p>
-                </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#0a1d37]">Dr. James Wilson</h3>
+              <p class="text-emerald-500 font-semibold mt-1">Cardiologist</p>
             </div>
+          </div>
 
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                <div class="h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" 
-                         alt="Dr. Michael Johnson" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[#0a1d37]">Dr. Michael Johnson</h3>
-                    <p class="text-emerald-500 font-semibold mt-1">Pediatrician</p>
-                </div>
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=800"
+                alt="Dr. Emily Chen"
+                class="w-full h-full object-cover"
+              />
             </div>
-
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                <div class="h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=800" 
-                         alt="Dr. Sophia Rodriguez" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-[#0a1d37]">Dr. Sophia Rodriguez</h3>
-                    <p class="text-emerald-500 font-semibold mt-1">Oncologist</p>
-                </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#0a1d37]">Dr. Emily Chen</h3>
+              <p class="text-emerald-500 font-semibold mt-1">Neurologist</p>
             </div>
+          </div>
 
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800"
+                alt="Dr. Michael Johnson"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#0a1d37]">
+                Dr. Michael Johnson
+              </h3>
+              <p class="text-emerald-500 font-semibold mt-1">Pediatrician</p>
+            </div>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
+          >
+            <div class="h-80 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=800"
+                alt="Dr. Sophia Rodriguez"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-[#0a1d37]">
+                Dr. Sophia Rodriguez
+              </h3>
+              <p class="text-emerald-500 font-semibold mt-1">Oncologist</p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
-<section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
-        
-        <button class="mb-24 px-8 py-3 border-2 border-emerald-500 text-emerald-500 font-bold rounded-lg hover:bg-emerald-500 hover:text-white transition-all duration-300">
-            View All Doctors
+      </div>
+    </section>
+    <section class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <button
+          class="mb-24 px-8 py-3 border-2 border-emerald-500 text-emerald-500 font-bold rounded-lg hover:bg-emerald-500 hover:text-white transition-all duration-300"
+        >
+          View All Doctors
         </button>
 
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold text-[#0a1d37] mb-4">Patient Testimonials</h2>
-            <div class="w-20 h-1 bg-emerald-500 mx-auto mb-8"></div>
-            <p class="text-gray-500 font-medium">
-                See what our patients have to say about their experience with our healthcare services.
-            </p>
+          <h2 class="text-4xl font-extrabold text-[#0a1d37] mb-4">
+            Patient Testimonials
+          </h2>
+          <div class="w-20 h-1 bg-emerald-500 mx-auto mb-8"></div>
+          <p class="text-gray-500 font-medium">
+            See what our patients have to say about their experience with our
+            healthcare services.
+          </p>
         </div>
 
         <div class="relative w-full max-w-5xl">
-            
-            <button class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 transition-colors">
-                <i class="fas fa-chevron-left text-sm"></i>
-            </button>
+          <button
+            class="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 transition-colors"
+          >
+            <i class="fas fa-chevron-left text-sm"></i>
+          </button>
 
-            <div class="bg-white rounded-3xl p-10 md:p-16 shadow-xl shadow-gray-200/50 border border-gray-100">
-                <div class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-8">
-                    <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-100 shadow-sm">
-                        <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=200" 
-                             alt="Robert Johnson" 
-                             class="w-full h-full object-cover">
-                    </div>
-                    
-                    <div class="text-center md:text-left">
-                        <h4 class="text-2xl font-bold text-[#0a1d37]">Robert Johnson</h4>
-                        <div class="flex items-center justify-center md:justify-start mt-2 text-yellow-400 space-x-1">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
+          <div
+            class="bg-white rounded-3xl p-10 md:p-16 shadow-xl shadow-gray-200/50 border border-gray-100"
+          >
+            <div
+              class="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-6 mb-8"
+            >
+              <div
+                class="w-24 h-24 rounded-full overflow-hidden border-4 border-gray-100 shadow-sm"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=200"
+                  alt="Robert Johnson"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+
+              <div class="text-center md:text-left">
+                <h4 class="text-2xl font-bold text-[#0a1d37]">
+                  Robert Johnson
+                </h4>
+                <div
+                  class="flex items-center justify-center md:justify-start mt-2 text-yellow-400 space-x-1"
+                >
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
                 </div>
-
-                <p class="text-gray-600 text-lg italic leading-relaxed text-center md:text-left">
-                    "After my surgery, I was impressed by how smoothly everything went. The pre-op preparation was thorough, and the post-op care was outstanding. Dr. Rodriguez and her team made sure I was comfortable and informed every step of the way. I'm grateful for their expertise."
-                </p>
+              </div>
             </div>
 
-            <button class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 transition-colors">
-                <i class="fas fa-chevron-right text-sm"></i>
-            </button>
-            
+            <p
+              class="text-gray-600 text-lg italic leading-relaxed text-center md:text-left"
+            >
+              "After my surgery, I was impressed by how smoothly everything
+              went. The pre-op preparation was thorough, and the post-op care
+              was outstanding. Dr. Rodriguez and her team made sure I was
+              comfortable and informed every step of the way. I'm grateful for
+              their expertise."
+            </p>
+          </div>
+
+          <button
+            class="absolute right-[-20px] top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-gray-400 hover:text-emerald-500 transition-colors"
+          >
+            <i class="fas fa-chevron-right text-sm"></i>
+          </button>
         </div>
-        <br>
+        <br />
         <div class="flex justify-center mb-20">
-            <button class="px-8 py-3 border border-emerald-500 text-emerald-500 font-semibold rounded-lg hover:bg-emerald-500 hover:text-white transition-all duration-300">
-                Submit Your Feedback
-            </button>
+          <button
+            class="px-8 py-3 border border-emerald-500 text-emerald-500 font-semibold rounded-lg hover:bg-emerald-500 hover:text-white transition-all duration-300"
+          >
+            Submit Your Feedback
+          </button>
         </div>
-    </div>
-</section>
-<footer class="bg-[#1a2b3c] text-gray-300 pt-16 pb-8">
-    <div class="max-w-7xl mx-auto px-6">
-        
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-            
-            <div>
-                <h3 class="text-white text-xl font-bold mb-6">About Us</h3>
-                <p class="leading-relaxed mb-6 text-sm">
-                    We are a leading healthcare provider committed to delivering exceptional medical services with compassion and care.
-                </p>
-                <div class="flex space-x-5">
-                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+      </div>
+    </section>
+    <footer class="bg-[#1a2b3c] text-gray-300 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <div>
+            <h3 class="text-white text-xl font-bold mb-6">About Us</h3>
+            <p class="leading-relaxed mb-6 text-sm">
+              We are a leading healthcare provider committed to delivering
+              exceptional medical services with compassion and care.
+            </p>
+            <div class="flex space-x-5">
+              <a href="#" class="hover:text-emerald-400 transition-colors"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="hover:text-emerald-400 transition-colors"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="hover:text-emerald-400 transition-colors"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="hover:text-emerald-400 transition-colors"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
             </div>
+          </div>
 
-            <div>
-                <h3 class="text-white text-xl font-bold mb-6">Quick Links</h3>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Home</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">About Us</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Services</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Doctors</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Contact</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">FAQs</a></li>
-                </ul>
-            </div>
+          <div>
+            <h3 class="text-white text-xl font-bold mb-6">Quick Links</h3>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Doctors</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >FAQs</a
+                >
+              </li>
+            </ul>
+          </div>
 
-            <div>
-                <h3 class="text-white text-xl font-bold mb-6">Our Services</h3>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Emergency Care</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Laboratory Services</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Dental</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Pharmacy</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Radiology</a></li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Cardiac Sciences</a></li>
-                </ul>
-            </div>
+          <div>
+            <h3 class="text-white text-xl font-bold mb-6">Our Services</h3>
+            <ul class="space-y-3 text-sm">
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Emergency Care</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Laboratory Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Dental</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Pharmacy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Radiology</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-emerald-400 transition-colors"
+                  >Cardiac Sciences</a
+                >
+              </li>
+            </ul>
+          </div>
 
-            <div>
-                <h3 class="text-white text-xl font-bold mb-6">Contact Us</h3>
-                <ul class="space-y-4 text-sm">
-                    <li class="flex items-start space-x-3">
-                        <i class="fas fa-location-dot mt-1 text-emerald-500"></i>
-                        <span>Namkum Ranchi Sindroll, Ranchi Road</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <i class="fas fa-phone text-emerald-500"></i>
-                        <span>+91 9142426139</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <i class="fas fa-envelope text-emerald-500"></i>
-                        <span>CareFlow7070@gmail.com</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                        <i class="fas fa-clock text-emerald-500"></i>
-                        <span>Mon-Fri: 8:00 AM - 8:00 PM</span>
-                    </li>
-                </ul>
-            </div>
+          <div>
+            <h3 class="text-white text-xl font-bold mb-6">Contact Us</h3>
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start space-x-3">
+                <i class="fas fa-location-dot mt-1 text-emerald-500"></i>
+                <span>Namkum Ranchi Sindroll, Ranchi Road</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-phone text-emerald-500"></i>
+                <span>+91 9142426139</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-envelope text-emerald-500"></i>
+                <span>CareFlow7070@gmail.com</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i class="fas fa-clock text-emerald-500"></i>
+                <span>Mon-Fri: 8:00 AM - 8:00 PM</span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
-            <p>© 2025 Hospital Management System. All rights reserved.</p>
-            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Tech Tycoons</a>.</p>
-            <div class="flex space-x-4">
-                <a href="#" class="hover:text-white">Privacy Policy</a>
-                <a href="#" class="hover:text-white">Terms of Service</a>
-                <a href="#" class="hover:text-white">Cookie Policy</a>
-            </div>
+        <div
+          class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0"
+        >
+          <p>© 2025 Hospital Management System. All rights reserved.</p>
+          <p>
+            Created and managed by
+            <a href="#" class="text-blue-500 hover:underline">Tech Tycoons</a>.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Terms of Service</a>
+            <a href="#" class="hover:text-white">Cookie Policy</a>
+          </div>
         </div>
-    </div>
-</footer>
-<script>
-        const container = document.getElementById('loginDropdownContainer');
-        const menu = document.getElementById('dropdownMenu');
-        const arrow = document.getElementById('arrowIcon');
-        const patientLogin = document.getElementById('patientLogin');
-        const bookBtn = document.getElementById('book-btn');
-        const patientregister = document.getElementById('patientregister');
+      </div>
+    </footer>
+    <script>
+      const container = document.getElementById("loginDropdownContainer");
+      const menu = document.getElementById("dropdownMenu");
+      const arrow = document.getElementById("arrowIcon");
+      const patientLogin = document.getElementById("patientLogin");
+      const bookBtn = document.getElementById("book-btn");
+      const patientregister = document.getElementById("patientregister");
 
-         // Patient Login Button Click  
-        patientLogin.addEventListener('click', () => {
-            window.location.href = './patient/patientlogin.html';
-        });
-        bookBtn.addEventListener('click', () => {
-            window.location.href = './bookAppointment.html';
-        });
-        
-        patientregister.addEventListener('click', () => {
-            window.location.href = './patient/patientRegistration.html';
-        });
+      // Patient Login Button Click
+      patientLogin.addEventListener("click", () => {
+        window.location.href = "./patient/patientlogin.html";
+      });
+      bookBtn.addEventListener("click", () => {
+        window.location.href = "./bookAppointment.html";
+      });
 
+      patientregister.addEventListener("click", () => {
+        window.location.href = "./patient/patientRegistration.html";
+      });
 
+      // Hover Start (Jab mouse upar aaye)
+      container.addEventListener("mouseenter", () => {
+        menu.classList.remove("hidden");
+        arrow.style.transform = "rotate(180deg)";
+      });
 
-        // Hover Start (Jab mouse upar aaye)
-        container.addEventListener('mouseenter', () => {
-            menu.classList.remove('hidden');
-            arrow.style.transform = 'rotate(180deg)';
-        });
+      // Hover End (Jab mouse hat jaye)
+      container.addEventListener("mouseleave", () => {
+        menu.classList.add("hidden");
 
-        // Hover End (Jab mouse hat jaye)
-        container.addEventListener('mouseleave', () => {
-            menu.classList.add('hidden');
-            
-            arrow.style.transform = 'rotate(0deg)';
-        });
-
-
-        
+        arrow.style.transform = "rotate(0deg)";
+      });
     </script>
-
-</body>
+  </body>
 </html>
