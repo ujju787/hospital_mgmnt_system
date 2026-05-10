@@ -32,3 +32,4 @@ Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
 To https://github.com/ujju787/hospital_mgmnt_system.git
    ce3bb96..265b499  main -> main
 PS C:\Users\wwwra\Desktop\hackathon\hospital_mgmnt_system> 
+// i use it only for the references
