@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800">
+
+    <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <div class="bg-emerald-500 p-2 rounded-full">
+                <i class="fas fa-heartbeat text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-bold text-gray-700 tracking-tight">Hospital Management</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
+            <a href="#" class="hover:text-emerald-500">Home</a>
+            <a href="#" class="hover:text-emerald-500">About Us</a>
+            <div class="flex items-center cursor-pointer hover:text-emerald-500">
+                <span>Services</span>
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </div>
+            <div class="flex items-center cursor-pointer hover:text-emerald-500">
+                <span>Specialities</span>
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </div>
+            <a href="#" class="hover:text-emerald-500">Doctors</a>
+            <a href="#" class="hover:text-emerald-500">Contact</a>
+            <a href="#" class="hover:text-emerald-500">FAQs</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <button class="bg-emerald-500 text-white px-5 py-2 rounded-lg flex items-center space-x-2 font-semibold hover:bg-emerald-600 transition">
+                <i class="fas fa-user"></i>
+                <span>Login</span>
+                <i class="fas fa-chevron-down text-xs ml-1"></i>
+            </button>
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48">
+                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative h-[85vh] w-full overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
+                 alt="Hospital Background" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 h-full flex flex-col justify-center px-12 md:px-24">
+            <h1 class="text-6xl font-extrabold text-gray-900 mb-2">Book an Appointment</h1>
+            <p class="text-2xl text-gray-600 mb-8">Special title treatment</p>
+            
+            <h2 class="text-4xl font-bold text-emerald-500 mb-10 leading-tight">
+                Healthcare for Good Today.<br>Tomorrow. Always
+            </h2>
+
+            <div class="flex space-x-6">
+                <div class="relative">
+                    <button class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
+                        Book Now 
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <span class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md">new</span>
+                </div>
+
+                <div class="relative">
+                    <button class="bg-emerald-500 text-white px-8 py-4 rounded-lg font-bold text-lg flex items-center hover:bg-emerald-600 transition group">
+                        Register Now 
+                        <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <span class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-0.5 rounded-full font-bold uppercase shadow-md">new</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
