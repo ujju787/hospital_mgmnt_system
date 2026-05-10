@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareFlow - Patient Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <nav class="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between sticky top-0 z-50">
+        <div class="flex items-center space-x-2">
+            <div class="bg-indigo-600 p-1.5 rounded-lg">
+                <i class="fas fa-heartbeat text-white text-lg"></i>
+            </div>
+            <span class="text-xl font-bold text-gray-800 tracking-tight">CareFlow Hospital</span>
+        </div>
+
+        <div class="flex items-center space-x-6">
+            <span class="text-gray-600 font-medium">rajjj</span>
+            <button class="bg-[#ef4444] hover:bg-red-600 text-white px-4 py-2 rounded-lg flex items-center space-x-2 font-bold transition shadow-sm">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+
+        <div class="relative bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[2rem] p-10 md:p-14 text-white overflow-hidden shadow-lg">
+            <div class="relative z-10">
+                <h1 class="text-5xl font-bold mb-4">Welcome Back!</h1>
+                <p class="text-xl opacity-90">Manage your health information and stay connected with us.</p>
+            </div>
+            
+            <div class="absolute right-10 top-1/2 -translate-y-1/2 hidden md:block">
+                <div class="relative">
+                    <div class="w-32 h-32 rounded-full border-4 border-white/30 flex items-center justify-center text-center p-4 text-sm font-bold backdrop-blur-sm">
+                        Profile Picture
+                    </div>
+                    <button class="absolute bottom-0 right-0 bg-white text-indigo-600 p-2 rounded-full shadow-lg hover:scale-110 transition">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-indigo-500 flex items-center space-x-4">
+                <div class="bg-indigo-50 p-3 rounded-xl text-indigo-500">
+                    <i class="fas fa-calendar-alt text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm font-semibold">Registration Date</p>
+                    <p class="text-gray-800 font-bold">May 10, 2026</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500 flex items-center space-x-4">
+                <div class="bg-emerald-50 p-3 rounded-xl text-emerald-500">
+                    <i class="fas fa-comments text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm font-semibold">Total Feedback</p>
+                    <p class="text-gray-800 font-bold">N/A</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-purple-500 flex items-center space-x-4">
+                <div class="bg-purple-50 p-3 rounded-xl text-purple-500">
+                    <i class="fas fa-envelope text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm font-semibold">Total Messages</p>
+                    <p class="text-gray-800 font-bold">N/A</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-orange-400 flex items-center space-x-4">
+                <div class="bg-orange-50 p-3 rounded-xl text-orange-500">
+                    <i class="fas fa-clock text-xl"></i>
+                </div>
+                <div>
+                    <p class="text-gray-500 text-sm font-semibold">Last Visit</p>
+                    <p class="text-gray-800 font-bold">N/A</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-user-circle text-indigo-500 text-2xl"></i>
+                        <h2 class="text-2xl font-bold text-gray-800">Personal Information</h2>
+                    </div>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg flex items-center space-x-2 transition shadow-md">
+                        <i class="fas fa-edit"></i>
+                        <span>Edit</span>
+                    </button>
+                </div>
+                
+                <div class="flex justify-between items-center py-4 border-b border-gray-50">
+                    <span class="text-gray-500 font-medium">Name:</span>
+                    <span class="text-gray-800 font-bold">rajjj</span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                <div class="flex items-center space-x-3 mb-8">
+                    <i class="fas fa-chart-line text-emerald-500 text-2xl"></i>
+                    <h2 class="text-2xl font-bold text-gray-800">Recent Activity</h2>
+                </div>
+                
+                <div class="bg-indigo-50/50 p-4 rounded-2xl flex items-center space-x-4">
+                    <div class="bg-white p-3 rounded-full shadow-sm text-indigo-500">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-800 font-bold">Account Created</p>
+                        <p class="text-gray-500 text-sm">May 10, 2026</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
