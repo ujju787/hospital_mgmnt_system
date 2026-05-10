@@ -1,296 +1,616 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Appointment</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Appointment</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+  <body class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white w-full max-w-2xl rounded-2xl shadow-lg p-6">
+      <!-- Heading -->
+      <h1 class="text-3xl font-bold text-center text-emerald-600 mb-6">
+        Book an Appointment
+      </h1>
 
-  <div class="bg-white w-full max-w-2xl rounded-2xl shadow-lg p-6">
+      <!-- Form -->
+      <form class="space-y-4" id="bookingForm" method="POST">
+        <!-- Full Name -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Full Name
+          </label>
 
-    <!-- Heading -->
-    <h1 class="text-3xl font-bold text-center text-emerald-600 mb-6">
-      Book an Appointment
-    </h1>
+          <input
+            type="text"
+            name="full_name"
+            placeholder="Enter your full name"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
 
-    <!-- Form -->
-    <form class="space-y-4">
+        <!-- Age -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Age
+          </label>
 
-      <!-- Full Name -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Full Name
-        </label>
+          <input
+            type="number"
+            name="age"
+            placeholder="Enter your age"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
 
-        <input
-          type="text"
-          placeholder="Enter your full name"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        />
+        <!-- Gender -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Gender
+          </label>
+
+          <select
+            name="gender"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            <option value="">Select your gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Hospital Selection -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Select Hospital
+          </label>
+
+          <select
+            id="hospitalSelect"
+            name="hospital"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            <option value="">Choose Hospital</option>
+
+            <option value="Apollo Hospital">Apollo Hospital</option>
+
+            <option value="Medanta Hospital">Medanta Hospital</option>
+
+            <option value="AIIMS Hospital">AIIMS Hospital</option>
+          </select>
+        </div>
+
+        <!-- Speciality -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Speciality
+          </label>
+
+          <select
+            id="specialitySelect"
+            name="speciality"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            <option value="">Select Speciality</option>
+          </select>
+        </div>
+
+        <!-- Doctor Selection -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Select Doctor
+          </label>
+
+          <select
+            id="doctorSelect"
+            name="doctor"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          >
+            <option value="">Select Doctor</option>
+          </select>
+        </div>
+
+        <!-- Address -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Address
+          </label>
+
+          <textarea
+            rows="2"
+            name="address"
+            placeholder="Enter your address"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          ></textarea>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1.5">
+            Contact Number
+          </label>
+
+          <input
+            type="text"
+            name="contact_number"
+            placeholder="Enter your contact number"
+            required
+            class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+        </div>
+
+        <!-- Buttons -->
+        <div class="space-y-2 pt-2">
+          <button
+            type="button"
+            onclick="submitForm()"
+            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg text-sm font-semibold transition"
+          >
+            Submit
+          </button>
+
+          <button
+            type="button"
+            class="w-full bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg text-sm font-semibold transition"
+          >
+            <a href="./index.html"><span>Back to Home</span></a>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success Modal -->
+    <div
+      id="successModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+      >
+        <div class="bg-emerald-500 p-6 text-white">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-check-circle text-3xl"></i>
+              <div>
+                <h2 class="text-2xl font-bold">
+                  Appointment Booked Successfully!
+                </h2>
+                <p class="text-emerald-100">
+                  Your appointment has been confirmed
+                </p>
+              </div>
+            </div>
+            <button
+              onclick="closeModal()"
+              class="text-2xl hover:text-emerald-200"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+
+        <div class="p-8">
+          <div id="receiptContent" class="space-y-4 mb-6">
+            <!-- Receipt details will be inserted here -->
+          </div>
+
+          <div class="border-t pt-6">
+            <h3 class="text-lg font-semibold mb-4">
+              Download Receipt with Image Background (Optional)
+            </h3>
+            <div class="space-y-3">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Upload an image for receipt background (optional):</label
+                >
+                <input
+                  type="file"
+                  id="receiptImage"
+                  accept="image/*"
+                  class="w-full border border-gray-300 rounded-lg px-3 py-2"
+                />
+                <p class="text-xs text-gray-500 mt-1">
+                  Max size: 5MB. Supported: JPG, PNG, GIF
+                </p>
+              </div>
+              <button
+                onclick="downloadReceiptPDF()"
+                class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition"
+              >
+                <i class="fas fa-download"></i> Download Receipt as PDF
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-6 border-t pt-6">
+            <button
+              onclick="newBooking()"
+              class="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg font-semibold transition"
+            >
+              <i class="fas fa-plus"></i> Book Another Appointment
+            </button>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <!-- Age -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Age
-        </label>
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      // Hospital Data
+      const hospitalData = {
+        "Apollo Hospital": {
+          specialities: {
+            Cardiology: ["Dr. Sitara", "Dr. Nirmala"],
 
-        <input
-          type="number"
-          placeholder="Enter your age"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        />
-      </div>
+            Neurology: ["Dr. Sweta", "Dr. Karan Mehta"],
 
-      <!-- Gender -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Gender
-        </label>
+            Orthopedic: ["Dr. Williams"],
+          },
+        },
 
-        <select
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        "Medanta Hospital": {
+          specialities: {
+            Dental: ["Dr. Riya Gupta"],
 
-          <option>Select your gender</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+            ENT: ["Dr. Mohit Roy"],
 
-        </select>
-      </div>
+            Dermatology: ["Dr. Sneha Das"],
+          },
+        },
 
-      <!-- Hospital Selection -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Select Hospital
-        </label>
+        "AIIMS Hospital": {
+          specialities: {
+            Pediatrics: ["Dr. Rahul Sinha"],
 
-        <select
-          id="hospitalSelect"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            Oncology: ["Dr. Neha Kapoor"],
 
-          <option value="">Choose Hospital</option>
+            Gynecology: ["Dr. Pooja Singh"],
+          },
+        },
+      };
 
-          <option value="apollo">Apollo Hospital</option>
+      // Global booking data
+      let currentBookingData = {};
 
-          <option value="medanta">Medanta Hospital</option>
+      // Elements
+      const hospitalSelect = document.getElementById("hospitalSelect");
+      const specialitySelect = document.getElementById("specialitySelect");
+      const doctorSelect = document.getElementById("doctorSelect");
 
-          <option value="aiims">AIIMS Hospital</option>
+      // Hospital Change
+      hospitalSelect.addEventListener("change", function () {
+        const selectedHospital = this.value;
 
-        </select>
-      </div>
+        // Reset speciality
+        specialitySelect.innerHTML = `<option value="">Select Speciality</option>`;
 
-      <!-- Speciality -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Speciality
-        </label>
+        // Reset doctor
+        doctorSelect.innerHTML = `<option value="">Select Doctor</option>`;
 
-        <select
-          id="specialitySelect"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+        if (selectedHospital) {
+          const specialities = hospitalData[selectedHospital].specialities;
 
-          <option value="">Select Speciality</option>
-
-        </select>
-      </div>
-
-      <!-- Doctor Selection -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Select Doctor
-        </label>
-
-        <select
-          id="doctorSelect"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
-
-          <option value="">Select Doctor</option>
-
-        </select>
-      </div>
-
-      <!-- Address -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Address
-        </label>
-
-        <textarea
-          rows="2"
-          placeholder="Enter your address"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"></textarea>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">
-          Contact Number
-        </label>
-
-        <input
-          type="text"
-          placeholder="Enter your contact number"
-          class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-        />
-      </div>
-
-      <!-- Buttons -->
-      <div class="space-y-2 pt-2">
-
-        <button
-          type="submit"
-          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2 rounded-lg text-sm font-semibold transition">
-
-          Submit
-        </button>
-
-        <button
-          type="button"
-          class="w-full bg-gray-500 hover:bg-gray-600 text-white py-2 rounded-lg text-sm font-semibold transition">
-
-          <a href="./index.html"><span>Back to Home</span></a>
-        </button>
-
-      </div>
-
-    </form>
-
-  </div>
-
-  <!-- JavaScript -->
-  <script>
-
-    // Hospital Data
-    const hospitalData = {
-
-      apollo: {
-
-        specialities: {
-
-          Cardiology: [
-            "Dr. Sitara",
-            "Dr. Nirmala"
-          ],
-
-          Neurology: [
-            "Dr. Sweta",
-            "Dr. Karan Mehta"
-          ],
-
-          Orthopedic: [
-            "Dr. Williams"
-          ]
-        }
-      },
-
-      medanta: {
-
-        specialities: {
-
-          Dental: [
-            "Dr. Riya Gupta"
-          ],
-
-          ENT: [
-            "Dr. Mohit Roy"
-          ],
-
-          Dermatology: [
-            "Dr. Sneha Das"
-          ]
-        }
-      },
-
-      aiims: {
-
-        specialities: {
-
-          Pediatrics: [
-            "Dr. Rahul Sinha"
-          ],
-
-          Oncology: [
-            "Dr. Neha Kapoor"
-          ],
-
-          Gynecology: [
-            "Dr. Pooja Singh"
-          ]
-        }
-      }
-    };
-
-    // Elements
-    const hospitalSelect = document.getElementById("hospitalSelect");
-    const specialitySelect = document.getElementById("specialitySelect");
-    const doctorSelect = document.getElementById("doctorSelect");
-
-    // Hospital Change
-    hospitalSelect.addEventListener("change", function () {
-
-      const selectedHospital = this.value;
-
-      // Reset speciality
-      specialitySelect.innerHTML =
-        `<option value="">Select Speciality</option>`;
-
-      // Reset doctor
-      doctorSelect.innerHTML =
-        `<option value="">Select Doctor</option>`;
-
-      if (selectedHospital) {
-
-        const specialities =
-          hospitalData[selectedHospital].specialities;
-
-        // Add Specialities
-        Object.keys(specialities).forEach(function (speciality) {
-
-          specialitySelect.innerHTML += `
+          // Add Specialities
+          Object.keys(specialities).forEach(function (speciality) {
+            specialitySelect.innerHTML += `
             <option value="${speciality}">
               ${speciality}
             </option>
           `;
-        });
-      }
-    });
+          });
+        }
+      });
 
-    // Speciality Change
-    specialitySelect.addEventListener("change", function () {
+      // Speciality Change
+      specialitySelect.addEventListener("change", function () {
+        const selectedHospital = hospitalSelect.value;
 
-      const selectedHospital = hospitalSelect.value;
+        const selectedSpeciality = this.value;
 
-      const selectedSpeciality = this.value;
+        // Reset Doctors
+        doctorSelect.innerHTML = `<option value="">Select Doctor</option>`;
 
-      // Reset Doctors
-      doctorSelect.innerHTML =
-        `<option value="">Select Doctor</option>`;
+        if (selectedHospital && selectedSpeciality) {
+          const doctors =
+            hospitalData[selectedHospital].specialities[selectedSpeciality];
 
-      if (selectedHospital && selectedSpeciality) {
-
-        const doctors =
-          hospitalData[selectedHospital]
-          .specialities[selectedSpeciality];
-
-        // Add Doctors
-        doctors.forEach(function (doctor) {
-
-          doctorSelect.innerHTML += `
+          // Add Doctors
+          doctors.forEach(function (doctor) {
+            doctorSelect.innerHTML += `
             <option value="${doctor}">
               ${doctor}
             </option>
           `;
-        });
+          });
+        }
+      });
+
+      // Form Submission
+      function submitForm() {
+        const form = document.getElementById("bookingForm");
+        const formData = new FormData(form);
+
+        // Validate
+        const full_name = formData.get("full_name").trim();
+        const age = formData.get("age");
+        const gender = formData.get("gender");
+        const hospital = formData.get("hospital");
+        const speciality = formData.get("speciality");
+        const doctor = formData.get("doctor");
+        const address = formData.get("address").trim();
+        const contact_number = formData.get("contact_number").trim();
+
+        if (
+          !full_name ||
+          !age ||
+          !gender ||
+          !hospital ||
+          !speciality ||
+          !doctor ||
+          !address ||
+          !contact_number
+        ) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        // Show loading state
+        const submitBtn = event.target;
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML =
+          '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+        // Submit via fetch
+        fetch("php/create_booking.php", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+          })
+          .then((text) => {
+            console.log("Response text:", text);
+            try {
+              const data = JSON.parse(text);
+              if (data.success) {
+                currentBookingData = data.booking;
+                showSuccessModal(data.booking);
+                form.reset();
+              } else {
+                alert(
+                  "Error: " + (data.message || "Failed to book appointment"),
+                );
+              }
+            } catch (e) {
+              console.error("JSON Parse error:", e);
+              console.error("Response was:", text);
+              alert(
+                "Server error. Please try again.\nDetails: " +
+                  text.substring(0, 100),
+              );
+            }
+          })
+          .catch((error) => {
+            console.error("Fetch error:", error);
+            alert("Error submitting form: " + error.message);
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          });
       }
-    });
 
-  </script>
+      function showSuccessModal(booking) {
+        const modal = document.getElementById("successModal");
+        const receiptContent = document.getElementById("receiptContent");
 
-</body>
+        const appointmentDate = new Date(
+          booking.booking_date + " " + booking.booking_time,
+        );
+        const formattedDate = appointmentDate.toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+        const formattedTime = appointmentDate.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        });
+
+        receiptContent.innerHTML = `
+        <div class="bg-gray-50 p-6 rounded-lg">
+          <h3 class="text-lg font-semibold mb-4 text-gray-900">Appointment Details</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Patient Name</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.full_name}</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Age & Gender</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.age} years, ${booking.gender}</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Hospital</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.hospital}</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Speciality</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.speciality}</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Doctor</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.doctor}</p>
+            </div>
+            <div>
+              <p class="text-xs text-gray-600 uppercase font-semibold">Contact</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.contact_number}</p>
+            </div>
+            <div class="col-span-2">
+              <p class="text-xs text-gray-600 uppercase font-semibold">Address</p>
+              <p class="text-lg font-semibold text-gray-900">${booking.address}</p>
+            </div>
+            <div class="col-span-2 bg-emerald-100 p-4 rounded-lg border-2 border-emerald-500">
+              <p class="text-xs text-emerald-700 uppercase font-semibold">Appointment Date & Time</p>
+              <p class="text-2xl font-bold text-emerald-700">${formattedDate}</p>
+              <p class="text-xl font-bold text-emerald-700">${formattedTime}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+        modal.classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("successModal").classList.add("hidden");
+      }
+
+      function newBooking() {
+        document.getElementById("bookingForm").reset();
+        specialitySelect.innerHTML =
+          '<option value="">Select Speciality</option>';
+        doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+        document.getElementById("successModal").classList.add("hidden");
+      }
+
+      function downloadReceiptPDF() {
+        const booking = currentBookingData;
+        const imageInput = document.getElementById("receiptImage");
+
+        let backgroundImage = "";
+        if (imageInput.files.length > 0) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            backgroundImage = e.target.result;
+            generatePDF(backgroundImage);
+          };
+          reader.readAsDataURL(imageInput.files[0]);
+        } else {
+          generatePDF("");
+        }
+
+        function generatePDF(bgImage) {
+          const appointmentDate = new Date(
+            booking.booking_date + " " + booking.booking_time,
+          );
+          const formattedDate = appointmentDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          });
+          const formattedTime = appointmentDate.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          });
+
+          const element = document.createElement("div");
+          element.style.padding = "40px";
+          element.style.fontFamily = "Arial, sans-serif";
+          element.style.color = "#333";
+
+          if (bgImage) {
+            element.style.backgroundImage = `url('${bgImage}')`;
+            element.style.backgroundSize = "cover";
+            element.style.backgroundPosition = "center";
+          } else {
+            element.style.backgroundColor = "#f9fafb";
+          }
+
+          element.innerHTML = `
+          <div style="background: rgba(255,255,255,0.95); padding: 30px; border-radius: 10px; max-width: 900px;">
+            <div style="text-align: center; margin-bottom: 30px;">
+              <h1 style="color: #059669; font-size: 32px; margin: 0;">CareFlow</h1>
+              <p style="color: #6b7280; font-size: 14px; margin: 5px 0 0 0;">Hospital Management System</p>
+              <h2 style="color: #059669; font-size: 24px; margin: 20px 0;">Appointment Receipt</h2>
+            </div>
+
+            <div style="border: 2px solid #059669; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold; width: 50%;">Patient Name:</td>
+                  <td style="padding: 12px;">${booking.full_name}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold;">Age & Gender:</td>
+                  <td style="padding: 12px;">${booking.age} years, ${booking.gender}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold;">Contact Number:</td>
+                  <td style="padding: 12px;">${booking.contact_number}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold;">Address:</td>
+                  <td style="padding: 12px;">${booking.address}</td>
+                </tr>
+              </table>
+            </div>
+
+            <div style="border: 2px solid #059669; padding: 20px; margin-bottom: 20px; border-radius: 8px;">
+              <h3 style="color: #059669; font-size: 18px; margin-top: 0;">Appointment Information</h3>
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold; width: 50%;">Hospital:</td>
+                  <td style="padding: 12px;">${booking.hospital}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold;">Speciality:</td>
+                  <td style="padding: 12px;">${booking.speciality}</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #e5e7eb;">
+                  <td style="padding: 12px; font-weight: bold;">Doctor:</td>
+                  <td style="padding: 12px;">${booking.doctor}</td>
+                </tr>
+                <tr style="background-color: #d1fae5; border-bottom: 1px solid #6ee7b7;">
+                  <td style="padding: 12px; font-weight: bold;">Appointment Date:</td>
+                  <td style="padding: 12px; font-weight: bold; color: #059669;">${formattedDate}</td>
+                </tr>
+                <tr style="background-color: #d1fae5;">
+                  <td style="padding: 12px; font-weight: bold;">Appointment Time:</td>
+                  <td style="padding: 12px; font-weight: bold; color: #059669;">${formattedTime}</td>
+                </tr>
+              </table>
+            </div>
+
+            <div style="text-align: center; border-top: 2px solid #059669; padding-top: 20px; margin-top: 20px;">
+              <p style="color: #6b7280; font-size: 12px; margin: 0;">
+                This receipt confirms your appointment booking. Please arrive 15 minutes early.
+              </p>
+              <p style="color: #059669; font-weight: bold; font-size: 12px; margin: 10px 0 0 0;">
+                Booking Date: ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", hour: "2-digit", minute: "2-digit" })}
+              </p>
+            </div>
+          </div>
+        `;
+
+          const opt = {
+            margin: 10,
+            filename: "appointment-receipt.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { orientation: "portrait", unit: "mm", format: "a4" },
+          };
+
+          html2pdf().set(opt).from(element).save();
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -49,11 +49,12 @@ $total_feedback = ($res_f) ? mysqli_num_rows($res_f) : 0;
         </div>
 
         <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
-            <a href="adminDashboard.php" class="hover:text-emerald-500">Dashboard</a>
+            <a href="adminDashboard.php" class="text-emerald-500">Dashboard</a>
             <a href="admin.patent.html" class="hover:text-emerald-500">Patients</a>
             <a href="admin.visit.html" class="hover:text-emerald-500">Visits</a>
             <a href="admin.feedback.html" class="hover:text-emerald-500">Feedback</a>
             <a href="admin.massage.html" class="hover:text-emerald-500">Messages</a>
+            <a href="appointments.php" class="hover:text-emerald-500">Appointments</a>
             <a href="admin.registration.html" class="hover:text-emerald-500">Registration</a>
         </div>
 
@@ -99,6 +100,7 @@ $total_feedback = ($res_f) ? mysqli_num_rows($res_f) : 0;
                 <p class="text-3xl font-bold text-emerald-500"><?php echo $total_feedback; ?></p>
             </div>
         </div>
+
     </main>
 
 </body>
