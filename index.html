@@ -34,11 +34,39 @@
         </div>
 
         <div class="flex items-center space-x-4">
-            <button class="bg-emerald-500 text-white px-5 py-2 rounded-lg flex items-center space-x-2 font-semibold hover:bg-emerald-600 transition">
-                <i class="fas fa-user"></i>
-                <span>Login</span>
-                <i class="fas fa-chevron-down text-xs ml-1"></i>
-            </button>
+         
+          <div class="relative inline-block text-left" id="loginDropdownContainer">
+        
+        <button id="loginBtn" class="bg-[#2ecc71] text-white px-6 py-2 rounded-md font-medium flex items-center gap-2 hover:bg-[#27ae60] transition-colors duration-300">
+            <i class="far fa-user"></i>
+            Login
+            <i class="fas fa-chevron-down text-xs transition-transform duration-300" id="arrowIcon"></i>
+        </button>
+
+        <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
+            
+            <a href="#" class="group flex items-center p-4 hover:bg-gray-50 border-b border-gray-100 transition-all">
+                <div class="text-[#2ecc71] text-xl mr-4">
+                    <i class="fas fa-user-nurse"></i>
+                </div>
+                <div>
+                    <p class="text-[#2c3e50] font-bold text-lg leading-tight">Patient Login</p>
+                    <p class="text-gray-400 text-sm">View Records</p>
+                </div>
+            </a>
+
+            <a href="#" class="group flex items-center p-4 hover:bg-gray-50 transition-all">
+                <div class="text-[#2ecc71] text-xl mr-4">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div>
+                    <p class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
+                    <p class="text-gray-400 text-sm">Access Dashboard</p>
+                </div>
+            </a>
+        </div>
+    </div>
+           
             <div class="relative">
                 <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48">
                 <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
@@ -323,6 +351,26 @@
         </div>
     </div>
 </footer>
+<script>
+        const container = document.getElementById('loginDropdownContainer');
+        const menu = document.getElementById('dropdownMenu');
+        const arrow = document.getElementById('arrowIcon');
+
+        // Hover Start (Jab mouse upar aaye)
+        container.addEventListener('mouseenter', () => {
+            menu.classList.remove('hidden');
+            arrow.style.transform = 'rotate(180deg)';
+        });
+
+        // Hover End (Jab mouse hat jaye)
+        container.addEventListener('mouseleave', () => {
+            menu.classList.add('hidden');
+            arrow.style.transform = 'rotate(0deg)';
+        });
+
+
+        
+    </script>
 
 </body>
 </html>

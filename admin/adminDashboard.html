@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Kalawati Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#f8faff] min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-100 px-6 py-3 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-[#2563eb] font-bold text-xl">
+                <i data-lucide="hospital" class="w-6 h-6"></i>
+                <span>Maa Kalawati Admin</span>
+            </div>
+            
+            <div class="hidden lg:flex items-center gap-6 text-slate-500 font-semibold text-sm">
+                <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1">Dashboard</a>
+                <a href="#" class="hover:text-blue-600 transition">Patients</a>
+                <a href="#" class="hover:text-blue-600 transition">Appointments</a>
+                <a href="#" class="hover:text-blue-600 transition">Visits</a>
+                <a href="#" class="hover:text-blue-600 transition">Feedback</a>
+                <a href="#" class="hover:text-blue-600 transition">Messages</a>
+                <a href="#" class="hover:text-blue-600 transition uppercase">Reg_Person</a>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button class="bg-[#eef2ff] text-[#4338ca] px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-indigo-100 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </button>
+            <div class="flex items-center gap-2 border-l pl-4 border-gray-200">
+                <div class="w-9 h-9 bg-cyan-500 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-gray-700 text-sm">Admin</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+        
+        <div class="bg-[#3b82f6] rounded-3xl p-10 flex justify-between items-center shadow-lg relative overflow-hidden">
+            <div class="z-10">
+                <h1 class="text-white text-4xl font-bold mb-2">Admin Dashboard</h1>
+                <p class="text-blue-100 text-lg opacity-90 font-medium">Welcome back! Here's an overview of your hospital management system.</p>
+            </div>
+            
+            <div class="z-10 bg-white/20 p-6 rounded-full border border-white/30 backdrop-blur-md">
+                <i data-lucide="layout-grid" class="w-12 h-12 text-white"></i>
+            </div>
+
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-blue-400 rounded-full opacity-20"></div>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-[#f3f7ff] p-6 rounded-2xl flex items-center gap-5 hover:shadow-md transition cursor-default">
+                    <div class="bg-blue-600 p-4 rounded-xl text-white shadow-lg shadow-blue-200">
+                        <i data-lucide="user" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-blue-700">14</div>
+                        <div class="text-slate-500 text-sm font-semibold">Total Patients</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#f3f7ff] p-6 rounded-2xl flex items-center gap-5 hover:shadow-md transition cursor-default">
+                    <div class="bg-blue-600 p-4 rounded-xl text-white shadow-lg shadow-blue-200">
+                        <i data-lucide="calendar" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-blue-700">26</div>
+                        <div class="text-slate-500 text-sm font-semibold">Total Appointments</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#f3f7ff] p-6 rounded-2xl flex items-center gap-5 hover:shadow-md transition cursor-default">
+                    <div class="bg-blue-600 p-4 rounded-xl text-white shadow-lg shadow-blue-200">
+                        <i data-lucide="message-square" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-blue-700">1</div>
+                        <div class="text-slate-500 text-sm font-semibold">Total Feedback</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#f3f7ff] p-6 rounded-2xl flex items-center gap-5 hover:shadow-md transition cursor-default">
+                    <div class="bg-blue-600 p-4 rounded-xl text-white shadow-lg shadow-blue-200">
+                        <i data-lucide="mail" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-blue-700">11</div>
+                        <div class="text-slate-500 text-sm font-semibold">Total Messages</div>
+                    </div>
+                </div>
+
+                <div class="bg-[#f3f7ff] p-6 rounded-2xl flex items-center gap-5 hover:shadow-md transition cursor-default">
+                    <div class="bg-blue-600 p-4 rounded-xl text-white shadow-lg shadow-blue-200">
+                        <i data-lucide="user-cog" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-blue-700">17</div>
+                        <div class="text-slate-500 text-sm font-semibold">Registered Users</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-user text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">Manage Patients</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">View and manage patient records</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-calendar-days text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">Manage Appointments</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">View and manage appointment records</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-chart-simple text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">User Visits</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Track website analytics</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-comment-dots text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">Manage Feedback</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Review user feedback</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-envelope text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">Manage Messages</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Handle user messages</p>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow">
+        <div class="bg-blue-600 text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+          <i class="fa-solid fa-user-gear text-xl"></i>
+        </div>
+        <h3 class="font-bold text-gray-800 text-lg mb-2">Registered Users</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Manage user accounts</p>
+      </div>
+
+    </div>
+    </main>
+
+    <script>
+        // Initializing icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

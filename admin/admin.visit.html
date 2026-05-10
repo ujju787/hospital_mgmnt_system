@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visits Analytics - Maa Kalawati Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#f0f4f8] min-h-screen font-sans">
+
+    <nav class="bg-white border-b border-gray-100 px-6 py-3 flex items-center justify-between sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2 text-blue-600 font-bold text-xl">
+                <i data-lucide="hospital" class="w-6 h-6"></i>
+                <span>Maa Kalawati Admin</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-6 text-slate-500 font-semibold text-sm">
+                <a href="#" class="hover:text-blue-600 transition">Dashboard</a>
+                <a href="#" class="hover:text-blue-600 transition">Patients</a>
+                <a href="#" class="text-blue-600 border-b-2 border-blue-600 pb-1">Visits</a>
+                <a href="#" class="hover:text-blue-600 transition">Feedback</a>
+                <a href="#" class="hover:text-blue-600 transition">Messages</a>
+                <a href="#" class="hover:text-blue-600 transition uppercase">Reg_Person</a>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button class="bg-blue-50 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-100 transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </button>
+            <div class="flex items-center gap-2 border-l pl-4 border-gray-200">
+                <div class="w-9 h-9 bg-cyan-500 rounded-full flex items-center justify-center text-white">
+                    <i data-lucide="user" class="w-5 h-5"></i>
+                </div>
+                <span class="font-bold text-gray-700 text-sm">Admin</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-[1600px] mx-auto p-6 grid grid-cols-12 gap-6">
+        
+        <div class="col-span-12 lg:col-span-3">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 h-fit">
+                <div class="flex items-center gap-2 text-blue-600 font-bold text-xl mb-6">
+                    <i data-lucide="calendar" class="w-6 h-6"></i>
+                    <span>Select Date</span>
+                </div>
+                
+                <input type="date" value="2026-05-10" 
+                    class="w-full border border-gray-200 rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-8">
+
+                <div class="space-y-6">
+                    <div class="flex justify-between items-center">
+                        <span class="text-slate-500 font-semibold">Selected Date:</span>
+                        <span class="text-blue-600 font-bold text-xl">10/05/2026</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t pt-4">
+                        <span class="text-slate-500 font-semibold">Total Visits:</span>
+                        <span class="text-blue-600 font-bold text-xl">32</span>
+                    </div>
+                    <div class="flex justify-between items-center border-t pt-4">
+                        <span class="text-slate-500 font-semibold">Unique Visitors:</span>
+                        <span class="text-blue-600 font-bold text-xl">18</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-12 lg:col-span-9">
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                <div class="flex items-center gap-2 text-blue-600 font-bold text-xl mb-8">
+                    <i data-lucide="line-chart" class="w-6 h-6"></i>
+                    <span>30-Day Visitor Trend</span>
+                </div>
+                
+                <div class="h-[350px] w-full">
+                    <canvas id="visitorChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 mt-6">
+                <div class="flex items-center gap-2 text-blue-600 font-bold text-xl mb-6">
+                    <i data-lucide="globe" class="w-6 h-6"></i>
+                    <span>Visitor Log (Recent 100)</span>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-slate-50 text-gray-700 font-bold">
+                            <tr>
+                                <th class="px-4 py-4">IP Address</th>
+                                <th class="px-4 py-4">First Visit</th>
+                                <th class="px-4 py-4">Last Visit</th>
+                                <th class="px-4 py-4 text-right">Total Visits</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="text-gray-600 font-medium">
+                                <td class="px-4 py-4">152.58.158.23</td>
+                                <td class="px-4 py-4">10/05/2026, 01:41:20</td>
+                                <td class="px-4 py-4">10/05/2026, 01:52:28</td>
+                                <td class="px-4 py-4 text-right">3</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Chart.js Configuration
+        const ctx = document.getElementById('visitorChart').getContext('2d');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(37, 99, 235, 0.2)');
+        gradient.addColorStop(1, 'rgba(37, 99, 235, 0)');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['16/04/2026', '22/04/2026', '23/04/2026', '08/05/2026', '09/05/2026'],
+                datasets: [{
+                    label: 'Unique Visitors',
+                    data: [8, 1, 1, 1, 2],
+                    borderColor: '#2563eb',
+                    borderWidth: 3,
+                    backgroundColor: gradient,
+                    fill: true,
+                    tension: 0.4, // Creates that smooth wave curve
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#2563eb',
+                    pointBorderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', align: 'end' }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 8,
+                        grid: { color: '#f1f5f9' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
