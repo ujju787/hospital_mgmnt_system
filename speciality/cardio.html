@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management - Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800">
+<nav class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
+  <div class="flex items-center space-x-2">
+    <div class="bg-emerald-500 p-2 rounded-full">
+      <i class="fas fa-heartbeat text-white text-xl"></i>
+    </div>
+    <span class="text-2xl font-bold text-gray-700 tracking-tight">
+      <span style="color: green">Care</span>Flow
+    </span>
+  </div>
+
+  <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
+    <a href="../index.html" class="hover:text-emerald-500">Home</a>
+    <a href="../aboutus.html" class="hover:text-emerald-500">About Us</a>
+    
+    <div class="relative group flex items-center cursor-pointer hover:text-emerald-500 py-2">
+      <span>Services</span>
+      <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        <div class="flex flex-col">
+          <a href="" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Emergency services</a>
+          <a href="../services/pharmacy.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Pharmacy</a>
+          <a href="../services/nurses.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Nurses</a>
+          <a href="../services/laboratory.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Laboratory & Diagnostics</a>
+          <a href="../weight-scale.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Weight Scale</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative group flex items-center cursor-pointer hover:text-emerald-500 py-2">
+      <span>Specialities</span>
+      <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        <div class="flex flex-col max-h-[400px] overflow-y-auto">
+          <a href="./cardio.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Cardiac Sciences</a>
+          <!-- <a href="./dental.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Dental Science</a> -->
+          <a href="./neurology.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Neurology</a>
+          <!-- <a href="./infectious-diseases.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Infectious Diseases</a> -->
+          <a href="./ophthalmology.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Ophthalmology</a>
+          <!-- <a href="./gastroenterology.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Gastroenterology</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">ENT</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Radiology</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Dermatology</a> -->
+        </div>
+      </div>
+    </div>
+
+    <a href="../doctors.html" class="hover:text-emerald-500">Doctors</a>
+    <a href="../contact.html" class="hover:text-emerald-500">Contact</a>
+    <a href="#" class="hover:text-emerald-500">FAQs</a>
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <div class="relative inline-block text-left" id="loginDropdownContainer">
+      
+
+      <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
+        <a href="#" class="group flex items-center p-4 hover:bg-gray-50 border-b border-gray-100 transition-all">
+          <div class="text-[#2ecc71] text-xl mr-4">
+            <i class="fas fa-user-nurse"></i>
+          </div>
+          <div>
+            <p id="patientLogin" class="text-[#2c3e50] font-bold text-lg leading-tight">Patient Login</p>
+            <p class="text-gray-400 text-sm">View Records</p>
+          </div>
+        </a>
+        <a href="./admin/adminLogin.html" class="group flex items-center p-4 hover:bg-gray-50 transition-all">
+          <div class="text-[#2ecc71] text-xl mr-4">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <div>
+            <p class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
+            <p class="text-gray-400 text-sm">Access Dashboard</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48" />
+      <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+    </div>
+  </div>
+</nav>
+    
+<section class="relative w-full h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden bg-white">
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="path-to-your-cardiac-image.jpg" 
+            alt="    " 
+            class="w-full h-full object-cover opacity-20 md:opacity-30"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-white/80"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-[#1a2332] mb-4 tracking-tight">
+            Cardiac Sciences
+        </h1>
+        
+        <p class="text-lg md:text-2xl text-gray-600 font-medium mb-6">
+            Advanced Heart Care & Cardiology
+        </p>
+        
+        <div class="inline-block">
+            <h2 class="text-2xl md:text-4xl font-bold text-[#2ecc71] tracking-wide">
+                Your Heart, Our Priority
+            </h2>
+            <div class="h-1 w-24 bg-[#2ecc71] mx-auto mt-2 rounded-full"></div>
+        </div>
+    </div>
+</section>
+
+<section class="py-16 px-4 bg-white text-center">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#1a2332] mb-2">About Cardiac Sciences</h2>
+        <div class="w-20 h-1.5 bg-[#2ecc71] mx-auto mb-8 rounded-full"></div>
+        
+        <p class="text-gray-600 text-lg leading-relaxed md:px-10">
+            Cardiac Sciences is dedicated to providing comprehensive care for heart-related conditions. Our team of experts specializes in advanced diagnostics, treatments, and surgeries to ensure the best outcomes for our patients.
+        </p>
+    </div>
+</section>
+<section class="py-12 px-4 bg-white">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#1a2332] mb-8">Available Locations</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Delhi
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Mumbai
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Bangalore
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Chennai
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Kolkata
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Hyderabad
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Pune
+            </div>
+            <div class="bg-[#f3f4f6] py-4 px-2 rounded-2xl font-bold text-[#1a2332] shadow-sm hover:shadow-md transition cursor-default">
+                Ahmedabad
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#1a2332] mb-12">Our Hospitals</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 flex flex-col items-center">
+                <img src="https://hospitalmgnt.whf.bz/Images/istockphoto-137200.jpg" alt="Doctor" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-50">
+                <h3 class="text-xl font-bold text-[#1a2332]">City Hospital</h3>
+                <p class="text-gray-500 mb-2">Delhi</p>
+                <div class="flex text-yellow-400 mb-6">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star text-gray-300"></i>
+                </div>
+                
+                <button class="w-full py-2 bg-[#e8f8f1] text-[#2ecc71] font-semibold rounded-xl mb-3 hover:bg-[#d1f2e1] transition">Know More</button>
+                <button class="w-full py-3 bg-[#1bbd8e] text-white font-bold rounded-xl hover:bg-[#16a37a] transition shadow-md">Book An Appointment</button>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 flex flex-col items-center">
+                <img src="" alt="Doctor" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-50">
+                <h3 class="text-xl font-bold text-[#1a2332]">Metro Hospital</h3>
+                <p class="text-gray-500 mb-2">Mumbai</p>
+                <div class="flex text-yellow-400 mb-6">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <button class="w-full py-2 bg-[#e8f8f1] text-[#2ecc71] font-semibold rounded-xl mb-3 hover:bg-[#d1f2e1] transition">Know More</button>
+                <button class="w-full py-3 bg-[#1bbd8e] text-white font-bold rounded-xl hover:bg-[#16a37a] transition shadow-md">Book An Appointment</button>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 flex flex-col items-center">
+                <img src="https://hospitalmgnt.whf.bz/Images/istockphoto-1191463311-612x612.jpg" alt="Doctor" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-50">
+                <h3 class="text-xl font-bold text-[#1a2332]">Heart Care Center</h3>
+                <p class="text-gray-500 mb-2">Bangalore</p>
+                <div class="flex text-yellow-400 mb-6">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <button class="w-full py-2 bg-[#e8f8f1] text-[#2ecc71] font-semibold rounded-xl mb-3 hover:bg-[#d1f2e1] transition">Know More</button>
+                <button class="w-full py-3 bg-[#1bbd8e] text-white font-bold rounded-xl hover:bg-[#16a37a] transition shadow-md">Book An Appointment</button>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-lg border border-gray-100 flex flex-col items-center">
+                <img src="https://hospitalmgnt.whf.bz/Images/istockphoto-1266812094-612x612.jpg" alt="Doctor" class="w-32 h-32 rounded-full object-cover mb-4 border-4 border-gray-50">
+                <h3 class="text-xl font-bold text-[#1a2332]">Global Hospital</h3>
+                <p class="text-gray-500 mb-2">Chennai</p>
+                <div class="flex text-yellow-400 mb-6">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star text-gray-300"></i><i class="fas fa-star text-gray-300"></i>
+                </div>
+                <button class="w-full py-2 bg-[#e8f8f1] text-[#2ecc71] font-semibold rounded-xl mb-3 hover:bg-[#d1f2e1] transition">Know More</button>
+                <button class="w-full py-3 bg-[#1bbd8e] text-white font-bold rounded-xl hover:bg-[#16a37a] transition shadow-md">Book An Appointment</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="bg-[#1a2b3c] text-gray-300 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+        
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">About Us</h3>
+                <p class="leading-relaxed mb-6 text-sm">
+                    We are a leading healthcare provider committed to delivering exceptional medical services with compassion and care.
+                </p>
+                <div class="flex space-x-5">
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Quick Links</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Home</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Services</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Doctors</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Contact</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">FAQs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Our Services</h3>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Emergency Care</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Laboratory Services</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Dental</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Pharmacy</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Radiology</a></li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Cardiac Sciences</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-white text-xl font-bold mb-6">Contact Us</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start space-x-3">
+                        <i class="fas fa-location-dot mt-1 text-emerald-500"></i>
+                        <span>Namkum Ranchi Sindroll, Ranchi Road</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-phone text-emerald-500"></i>
+                        <span>+91 9142426139</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-emerald-500"></i>
+                        <span>rajkmr7070@gmail.com</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                        <i class="fas fa-clock text-emerald-500"></i>
+                        <span>Mon-Fri: 8:00 AM - 8:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
+            <p>© 2025 Hospital Management System. All rights reserved.</p>
+            <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Raj Kumar</a>.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">Cookie Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

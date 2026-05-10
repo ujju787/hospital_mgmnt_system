@@ -9,42 +9,89 @@
 </head>
 <body class="font-sans text-gray-800">
 
-    <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
-        <div class="flex items-center space-x-2">
-            <div class="bg-emerald-500 p-2 rounded-full">
-                <i class="fas fa-heartbeat text-white text-xl"></i>
-            </div>
-            <span class="text-2xl font-bold text-gray-700 tracking-tight"><span style="color:green;">Care</span> Flow</span>
-        </div>
+     <nav class="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
+  <div class="flex items-center space-x-2">
+    <div class="bg-emerald-500 p-2 rounded-full">
+      <i class="fas fa-heartbeat text-white text-xl"></i>
+    </div>
+    <span class="text-2xl font-bold text-gray-700 tracking-tight">
+      <span style="color: green">Care</span>Flow
+    </span>
+  </div>
 
-        <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
-            <a href="./index.html" class="hover:text-emerald-500">Home</a>
-            <a href="./aboutus.html" class="hover:text-emerald-500">About Us</a>
-            <div class="flex items-center cursor-pointer hover:text-emerald-500">
-                <span>Services</span>
-                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </div>
-            <div class="flex items-center cursor-pointer hover:text-emerald-500">
-                <span>Specialities</span>
-                <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </div>
-            <a href="./doctors.html" class="hover:text-emerald-500">Doctors</a>
-            <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
-            <a href="./faqs.html" class="hover:text-emerald-500">FAQs</a>
+  <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
+    <a href="./index.html" class="hover:text-emerald-500">Home</a>
+    <a href="./aboutus.html" class="hover:text-emerald-500">About Us</a>
+    
+    <div class="relative group flex items-center cursor-pointer hover:text-emerald-500 py-2">
+      <span>Services</span>
+      <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        <div class="flex flex-col">
+          <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Emergency services</a>
+          <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Pharmacy</a>
+          <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Nurses</a>
+          <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Laboratory & Diagnostics</a>
+          <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Weight Scale</a>
         </div>
+      </div>
+    </div>
 
-        <div class="flex items-center space-x-4">
-            <button class="bg-emerald-500 text-white px-5 py-2 rounded-lg flex items-center space-x-2 font-semibold hover:bg-emerald-600 transition">
-                <i class="fas fa-user"></i>
-                <span>Login</span>
-                <i class="fas fa-chevron-down text-xs ml-1"></i>
-            </button>
-            <div class="relative">
-                <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48">
-                <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-            </div>
+    <div class="relative group flex items-center cursor-pointer hover:text-emerald-500 py-2">
+      <span>Specialities</span>
+      <i class="fas fa-chevron-down ml-1 text-xs"></i>
+      <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+        <div class="flex flex-col max-h-[400px] overflow-y-auto">
+          <a href="./speciality/cardio.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Cardiac Sciences</a>
+          <!-- <a href="./speciality/dental.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Dental Science</a> -->
+          <a href="./speciality/neurology.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Neurology</a>
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Infectious Diseases</a> -->
+          <a href="./speciality/ophthalmology.html" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Ophthalmology</a>
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Gastroenterology</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">ENT</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 border-b border-gray-50 transition-colors">Radiology</a> -->
+          <!-- <a href="#" class="px-6 py-3 text-[#2c3e50] hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Dermatology</a> -->
         </div>
-    </nav>
+      </div>
+    </div>
+
+    <a href="./doctors.html" class="hover:text-emerald-500">Doctors</a>
+    <a href="./contact.html" class="hover:text-emerald-500">Contact</a>
+    <a href="#" class="hover:text-emerald-500">FAQs</a>
+  </div>
+
+  <div class="flex items-center space-x-4">
+    <div class="relative inline-block text-left" id="loginDropdownContainer">
+      
+
+      <div id="dropdownMenu" class="hidden absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-50">
+        <a href="#" class="group flex items-center p-4 hover:bg-gray-50 border-b border-gray-100 transition-all">
+          <div class="text-[#2ecc71] text-xl mr-4">
+            <i class="fas fa-user-nurse"></i>
+          </div>
+          <div>
+            <p id="patientLogin" class="text-[#2c3e50] font-bold text-lg leading-tight">Patient Login</p>
+            <p class="text-gray-400 text-sm">View Records</p>
+          </div>
+        </a>
+        <a href="./admin/adminLogin.html" class="group flex items-center p-4 hover:bg-gray-50 transition-all">
+          <div class="text-[#2ecc71] text-xl mr-4">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <div>
+            <p class="text-[#2c3e50] font-bold text-lg leading-tight">Admin Login</p>
+            <p class="text-gray-400 text-sm">Access Dashboard</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <input type="text" placeholder="Search..." class="border border-gray-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-emerald-500 w-48" />
+      <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+    </div>
+  </div>
+</nav>
 
     
 
@@ -87,7 +134,7 @@
       
       <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
         <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=300" alt="Dr. Sitara" class="w-full h-full object-cover">
+          <img src="https://hospitalmgnt.whf.bz/Images/istockphoto-137200.jpg" alt="Dr. Sitara" class="w-full h-full object-cover">
         </div>
         <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Sitara</h3>
         <p class="text-emerald-500 font-bold text-sm mb-4">Cardiologist</p>
