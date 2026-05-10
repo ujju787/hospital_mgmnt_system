@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management - Landing Page</title>
+    <title>Care Flow - Landing Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -14,7 +14,7 @@
             <div class="bg-emerald-500 p-2 rounded-full">
                 <i class="fas fa-heartbeat text-white text-xl"></i>
             </div>
-            <span class="text-2xl font-bold text-gray-700 tracking-tight">Hospital Management</span>
+            <span class="text-2xl font-bold text-gray-700 tracking-tight"><span style="color:green;">Care</span> Flow</span>
         </div>
 
         <div class="hidden md:flex items-center space-x-6 text-gray-600 font-medium">
@@ -66,7 +66,106 @@
   </div>
 </section>
 
- 
+ <section class="py-16 bg-white">
+  <div class="container mx-auto px-6 text-center">
+    
+    <h2 class="text-4xl font-extrabold text-[#0a1d37] mb-4 tracking-tight">
+      Our Doctors
+    </h2>
+
+    <div class="w-20 h-1.5 bg-emerald-500 mx-auto mb-8 rounded-full"></div>
+    
+    <p class="max-w-2xl mx-auto text-gray-500 text-lg leading-relaxed font-medium">
+      Meet our team of highly skilled and experienced doctors dedicated to your health and well-being.
+    </p>
+
+  </div>
+</section>
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71f1536783?auto=format&fit=crop&q=80&w=300" alt="Dr. Sitara" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Sitara</h3>
+        <p class="text-emerald-500 font-bold text-sm mb-4">Cardiologist</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8 px-2">
+          Cardiologist with 10 years of experience.
+        </p>
+        <div class="w-full space-y-3">
+          <button class="w-full py-2.5 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm hover:bg-emerald-100 transition-colors">
+            <a href="./doctors/dr.sitara.html" class="text-emerald-600 hover:text-emerald-700">View Full Profile</a>
+          </button>
+          <button class="w-full py-2.5 rounded-lg bg-[#10b981] text-white font-bold text-sm hover:bg-emerald-600 transition-colors shadow-md">
+            <a href="./bookAppointment.html" class="text-white hover:text-emerald-100">Book An Appointment</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
+          <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&q=80&w=300" alt="Dr. Swyeta" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Sweta</h3>
+        <p class="text-emerald-500 font-bold text-sm mb-4">Neurologist</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8 px-2">
+          Neurologist with 8 years of experience.
+        </p>
+        <div class="w-full space-y-3">
+          <button class="w-full py-2.5 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm hover:bg-emerald-100 transition-colors">
+            <a href="./doctors/dr.sweta.html" class="text-emerald-600 hover:text-emerald-700">View Full Profile</a>
+          </button>
+          <button class="w-full py-2.5 rounded-lg bg-[#10b981] text-white font-bold text-sm hover:bg-emerald-600 transition-colors shadow-md">
+             <a href="./bookAppointment.html" class="text-white hover:text-emerald-100">Book An Appointment</a>
+          
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
+          <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" alt="Dr. Williams" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Williams</h3>
+        <p class="text-emerald-500 font-bold text-sm mb-4">Orthopedic Surgeon</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8 px-2">
+          Orthopedic Surgeon with 12 years of experience.
+        </p>
+        <div class="w-full space-y-3">
+          <button class="w-full py-2.5 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm hover:bg-emerald-100 transition-colors">
+             <a href="./doctors/dr.william.html" class="text-emerald-600 hover:text-emerald-800">View Full Profile</a>
+          </button>
+          <button class="w-full py-2.5 rounded-lg bg-[#10b981] text-white font-bold text-sm hover:bg-emerald-600 transition-colors shadow-md">
+             <a href="./bookAppointment.html" class="text-white hover:text-emerald-100">Book An Appointment</a>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center text-center transition-transform hover:scale-[1.02]">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-gray-50 shadow-inner">
+          <img src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?auto=format&fit=crop&q=80&w=300" alt="Dr. Nirmala" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-1">Dr. Nirmala</h3>
+        <p class="text-emerald-500 font-bold text-sm mb-4">Cardiologist</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8 px-2">
+          Cardiologist with 11 years of experience.
+        </p>
+        <div class="w-full space-y-3">
+          <button class="w-full py-2.5 rounded-lg bg-emerald-50 text-emerald-600 font-bold text-sm hover:bg-emerald-100 transition-colors">
+             <a href="./doctors/dr.nirmala.html" class="text-emerald-600 hover:text-emerald-700">View Full Profile</a>
+          </button>
+          </button>
+          <button class="w-full py-2.5 rounded-lg bg-[#10b981] text-white font-bold text-sm hover:bg-emerald-600 transition-colors shadow-md">
+            <a href="./bookAppointment.html" class="text-white hover:text-emerald-100">Book An Appointment</a>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -137,7 +236,7 @@
         </div>
 
         <div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
-            <p>© 2025 Hospital Management System. All rights reserved.</p>
+            <p>© 2025 Care Flow. All rights reserved.</p>
             <p>Created and managed by <a href="#" class="text-blue-500 hover:underline">Raj Kumar</a>.</p>
             <div class="flex space-x-4">
                 <a href="#" class="hover:text-white">Privacy Policy</a>
